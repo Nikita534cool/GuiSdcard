@@ -1,11 +1,11 @@
-# requriements
+requriements
 Hello this is a gui for your phone/other
 requirements:
 python (pkg install python),
 flask (pip install python)
 Termux (google play/apk)
 
-# installation
+installation
 Install termux
 then type in it 'termux-setup-storage'
 after thath 'pkg install python'
@@ -25,4 +25,3 @@ Bye!
 
 code made by gemini,readme by nikita534cool on github.com
 program is as is
-
