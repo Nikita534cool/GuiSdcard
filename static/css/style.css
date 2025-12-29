@@ -1,0 +1,226 @@
+:root {
+    --bg-color: #0f1014;
+    --pane-bg: #1a1c23;
+    --header-bg: #242731;
+    --text-color: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --border-color: #2d333d;
+    --row-hover: #2d333d;
+    --folder-icon: #f59e0b;
+    --file-icon: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.logo h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.status-bar {
+    font-size: 0.875rem;
+    color: #10b981;
+}
+
+.status-bar i {
+    font-size: 0.6rem;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+
+.dual-pane {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+.pane {
+    flex: 1;
+    background-color: var(--pane-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pane-header {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breadcrumb {
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.4rem 0.75rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.breadcrumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.pane-tools button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.pane-tools button:hover {
+    color: var(--text-color);
+}
+
+.file-list-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.file-list {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.file-list th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    background-color: var(--pane-bg);
+    z-index: 10;
+}
+
+.file-list td {
+    padding: 0.6rem 1rem;
+}
+
+.file-list tr {
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.file-list tr:hover {
+    background-color: var(--row-hover);
+}
+
+.row-icon {
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+}
+
+.fa-folder {
+    color: var(--folder-icon);
+}
+
+.fa-file {
+    color: var(--file-icon);
+}
+
+.pane.drag-over {
+    border: 2px dashed var(--accent-color);
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+.file-list tr[draggable="true"]:active {
+    opacity: 0.5;
+}
+
+.size-col,
+.date-col {
+    color: var(--text-muted);
+}
+
+footer {
+    background-color: var(--header-bg);
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.shortcuts {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+kbd {
+    background: #334155;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #f8fafc;
+    margin-right: 4px;
+    font-family: inherit;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}

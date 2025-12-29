@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Flask Commander</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <div id="app">
+        <header>
+            <div class="logo">
+                <i class="fas fa-folder-tree"></i>
+                <h1>Total Flask Commander</h1>
+            </div>
+            <div class="status-bar">
+                <span id="server-status"><i class="fas fa-circle"></i> Online</span>
+            </div>
+        </header>
+
+        <main class="dual-pane">
+            <div class="pane" id="left-pane">
+                <div class="pane-header">
+                    <div class="breadcrumb" id="left-breadcrumb"></div>
+                    <div class="pane-tools">
+                        <button onclick="refreshPane('left')"><i class="fas fa-sync"></i></button>
+                    </div>
+                </div>
+                <div class="file-list-container">
+                    <table class="file-list">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Size</th>
+                                <th>Modified</th>
+                            </tr>
+                        </thead>
+                        <tbody id="left-list-body">
+                            <!-- Items will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pane-divider"></div>
+
+            <div class="pane" id="right-pane">
+                <div class="pane-header">
+                    <div class="breadcrumb" id="right-breadcrumb"></div>
+                    <div class="pane-tools">
+                        <button onclick="refreshPane('right')"><i class="fas fa-sync"></i></button>
+                    </div>
+                </div>
+                <div class="file-list-container">
+                    <table class="file-list">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Size</th>
+                                <th>Modified</th>
+                            </tr>
+                        </thead>
+                        <tbody id="right-list-body">
+                            <!-- Items will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="shortcuts">
+                <span><kbd>F3</kbd> View</span>
+                <span><kbd>F5</kbd> Copy</span>
+                <span><kbd>F6</kbd> Move</span>
+                <span><kbd>F7</kbd> New Folder</span>
+                <span><kbd>F8</kbd> Delete</span>
+            </div>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
