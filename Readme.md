@@ -23,4 +23,5 @@ and you enjoy the file explorer
 to put files just drag and drop them
 Bye!
 
--# code made by gemini,readme by nikita534cool on github.com
+code made by gemini,readme by nikita534cool on github.com
+program is as is
